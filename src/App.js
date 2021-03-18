@@ -18,13 +18,6 @@ const filterContacts = (contacts, filter) =>
 	);
 
 export default class App extends Component {
-	state = {
-		contacts: [],
-		filter: '',
-		error: false,
-    	alert: '',
-	};
-
 	static propTypes = {
 		contacts: PropTypes.array.isRequired,
 		filter: PropTypes.string.isRequired,
@@ -35,6 +28,13 @@ export default class App extends Component {
 		changeFilter: PropTypes.func.isRequired,
 		onDeleteContact: PropTypes.func.isRequired,
 		addAlertMessage: PropTypes.func.isRequired,
+	};
+
+	state = {
+		contacts: [],
+		filter: '',
+		error: false,
+    	alert: '',
 	};
 
 	componentDidMount() {

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import ContactListItem from '../ContactListItem';
@@ -16,4 +17,13 @@ export default function ContactList ({ contacts, onDeleteContact}) {
             ))}
         </TransitionGroup>
     );
+};
+
+ContactList.propTypes = {
+	contacts: PropTypes.arrayOf(
+        PropTypes.exact({
+          id: PropTypes.string,
+        }),
+    ).isRequired,
+    onDeleteContact: PropTypes.func.isRequired,
 };

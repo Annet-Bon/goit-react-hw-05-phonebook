@@ -1,7 +1,16 @@
-import styles from './contactForm.module.css';
 import { Component } from 'react';
+import PropTypes from 'prop-types';
+
+import styles from './contactForm.module.css';
 
 export default class ContactForm extends Component {
+    static propTypes = {
+		name: PropTypes.string.isRequired,
+		number: PropTypes.number.isRequired,
+		onChange: PropTypes.func.isRequired,
+		onSubmit: PropTypes.func.isRequired,
+	};
+
     state = {
         name: '',
         number: '',
